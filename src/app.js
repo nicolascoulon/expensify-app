@@ -18,16 +18,6 @@ const jsx = (
   </Provider>
 );
 
-store.dispatch(addExpense({ description: 'water bill', amount: 4500}));
-store.dispatch(addExpense({ description: 'surf', createdAt: 1000}));
-store.dispatch(addExpense({ description: 'gas bill'}));
-store.dispatch(addExpense({ description: 'rent', amount: 12500}));
-//store.dispatch(setTextFilter('bill'));
 
-const state = store.getState();
-const visibleExpenses = getVisibleExpenses(state.expenses, state.filters);
-
-
-console.log(visibleExpenses);
 
 ReactDOM.render( jsx , document.getElementById('app'));
