@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom';
 import { Provider } from 'react-redux';
 import AppRouter from './routers/AppRouter';
 import configureStore from './store/configureStore';
-import { addExpense } from './actions/expensesActions';
+import { startSetExpenses } from './actions/expensesActions';
 import { setTextFilter } from './actions/filtersActions';
 import  getVisibleExpenses from './selectors/expenses';
 import './firebase/firebase';
@@ -22,6 +22,10 @@ const jsx = (
   </Provider>
 );
 
+ReactDOM.render( <p>loading...</p> , document.getElementById('app'));
 
-
+store.dispatch(startSetExpenses()).then( () => {
 ReactDOM.render( jsx , document.getElementById('app'));
+});
+
+
