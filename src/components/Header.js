@@ -8,10 +8,9 @@ export const Header = ( {startLogout} ) => {
   return (
       <header>
       <h1>Expensify</h1>
-      <NavLink to="/" activeClassName="is-active" exact={true}>Dashboard</NavLink>
+      <NavLink to="/dashboard" activeClassName="is-active" /*exact={true}*/>Dashboard</NavLink>
        <NavLink to="/create" activeClassName="is-active">Create expense</NavLink>
        <NavLink to="/edit" activeClassName="is-active">Edit expense</NavLink>
-        <NavLink to="/help" activeClassName="is-active">Help</NavLink>
         <button onClick={startLogout}>Logout</button>
       </header>
   )
@@ -23,3 +22,4 @@ const mapDispatchToProp = (dispatch) => ({
 });
 
 export default connect(undefined, mapDispatchToProp)(Header);
+
